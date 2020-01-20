@@ -1,11 +1,17 @@
-import * as React from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
-// import { Login, Dashboard, New } from './pages';
+import React from "react";
+import { HashRouter, Switch, Route } from "react-router-dom";
+import { Login, Dashboard, New } from "./pages";
 
-export default function Routes() {
+const Routes: React.FC = () => {
   return (
-    <BrowserRouter>
-      <Switch />
-    </BrowserRouter>
+    <HashRouter>
+      <Switch>
+        <Route path="/" exact component={Login}></Route>
+        <Route path="/dashboard" component={Dashboard}></Route>
+        <Route path="/new" component={New}></Route>
+      </Switch>
+    </HashRouter>
   );
-}
+};
+
+export default Routes;
